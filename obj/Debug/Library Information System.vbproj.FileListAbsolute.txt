@@ -1,0 +1,40 @@
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.MainForm.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.Resources.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.RegistrationForm.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.vbproj.GenerateResource.cache
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.vbproj.CoreCompileInputs.cache
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Library Information System.exe.config
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Library Information System.exe
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Library Information System.pdb
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Library Information System.xml
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.exe
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.xml
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.pdb
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.vbprojAssemblyReference.cache
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Npgsql.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Buffers.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Memory.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Text.Json.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.ValueTuple.dll
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Npgsql.pdb
+C:\Users\andra\source\repos\Library Information System\bin\Debug\Npgsql.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Buffers.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Memory.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Text.Json.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\andra\source\repos\Library Information System\bin\Debug\System.ValueTuple.xml
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library Information System.vbproj.CopyComplete
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.LoginForm.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.SplashScreen.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.UserPanelForm.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.AboutBox.resources
+C:\Users\andra\source\repos\Library Information System\obj\Debug\Library_Information_System.AdminPanelForm.resources
