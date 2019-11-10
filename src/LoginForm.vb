@@ -12,12 +12,13 @@ Public Class LoginForm
         End Try
 
         If userResult IsNot Nothing Then
-            Dim panelForm As Form = Nothing
+            Dim panelForm = Nothing
             If userResult.IsAdmin Then
-                panelForm = New AdminPanelForm()
+                panelForm = New AdminPanelForm(userResult.Username)
             Else
-                panelForm = New UserPanelForm()
+                panelForm = New UserPanelForm(userResult.Username)
             End If
+            panelForm.LoginForm = Me
             Me.Hide()
             panelForm.MdiParent = Me.MdiParent
             panelForm.StartPosition = FormStartPosition.CenterScreen
@@ -32,5 +33,4 @@ Public Class LoginForm
         registrationFormObj.StartPosition = FormStartPosition.CenterScreen
         registrationFormObj.Show()
     End Sub
-
 End Class

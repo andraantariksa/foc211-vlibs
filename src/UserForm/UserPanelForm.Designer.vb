@@ -23,12 +23,15 @@ Partial Class UserPanelForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserPanelForm))
         Me.BooksListView = New System.Windows.Forms.ListView()
         Me.Title = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ISBN = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Description = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.BooksImageList = New System.Windows.Forms.ImageList(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BorrowButton = New System.Windows.Forms.Button()
         Me.DescriptionPanel = New System.Windows.Forms.Panel()
         Me.DescriptionLabel = New System.Windows.Forms.Label()
         Me.BookPublisherLabel = New System.Windows.Forms.Label()
@@ -45,21 +48,47 @@ Partial Class UserPanelForm
         Me.SortByComboBox = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.OrderComboBox = New System.Windows.Forms.ComboBox()
+        Me.ToolStrip = New System.Windows.Forms.ToolStrip()
+        Me.BooksToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TimeToolStripLabel = New System.Windows.Forms.ToolStripLabel()
+        Me.LogoutToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.UsernameToolStripLabel = New System.Windows.Forms.ToolStripLabel()
+        Me.Timer = New System.Windows.Forms.Timer(Me.components)
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox1.SuspendLayout()
         Me.DescriptionPanel.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.ToolStrip.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
         Me.SuspendLayout()
         '
         'BooksListView
         '
-        Me.BooksListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.ISBN, Me.Description})
+        Me.BooksListView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Title, Me.ID, Me.ISBN, Me.Description})
         Me.BooksListView.HideSelection = False
         Me.BooksListView.LargeImageList = Me.BooksImageList
-        Me.BooksListView.Location = New System.Drawing.Point(9, 85)
+        Me.BooksListView.Location = New System.Drawing.Point(9, 59)
+        Me.BooksListView.MultiSelect = False
         Me.BooksListView.Name = "BooksListView"
-        Me.BooksListView.Size = New System.Drawing.Size(390, 208)
+        Me.BooksListView.Size = New System.Drawing.Size(390, 275)
         Me.BooksListView.TabIndex = 0
         Me.BooksListView.UseCompatibleStateImageBehavior = False
+        '
+        'ID
+        '
+        Me.ID.DisplayIndex = 3
+        '
+        'ISBN
+        '
+        Me.ISBN.DisplayIndex = 1
+        '
+        'Description
+        '
+        Me.Description.DisplayIndex = 2
         '
         'BooksImageList
         '
@@ -69,6 +98,7 @@ Partial Class UserPanelForm
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.BorrowButton)
         Me.GroupBox1.Controls.Add(Me.DescriptionPanel)
         Me.GroupBox1.Controls.Add(Me.BookPublisherLabel)
         Me.GroupBox1.Controls.Add(Me.BookISBNLabel)
@@ -77,12 +107,22 @@ Partial Class UserPanelForm
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(433, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(293, 299)
+        Me.GroupBox1.Size = New System.Drawing.Size(293, 340)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Information"
+        '
+        'BorrowButton
+        '
+        Me.BorrowButton.Enabled = False
+        Me.BorrowButton.Location = New System.Drawing.Point(6, 311)
+        Me.BorrowButton.Name = "BorrowButton"
+        Me.BorrowButton.Size = New System.Drawing.Size(75, 23)
+        Me.BorrowButton.TabIndex = 2
+        Me.BorrowButton.Text = "Borrow"
+        Me.BorrowButton.UseVisualStyleBackColor = True
         '
         'DescriptionPanel
         '
@@ -90,13 +130,13 @@ Partial Class UserPanelForm
         Me.DescriptionPanel.Controls.Add(Me.DescriptionLabel)
         Me.DescriptionPanel.Location = New System.Drawing.Point(6, 85)
         Me.DescriptionPanel.Name = "DescriptionPanel"
-        Me.DescriptionPanel.Size = New System.Drawing.Size(281, 208)
+        Me.DescriptionPanel.Size = New System.Drawing.Size(281, 220)
         Me.DescriptionPanel.TabIndex = 8
         '
         'DescriptionLabel
         '
         Me.DescriptionLabel.AutoSize = True
-        Me.DescriptionLabel.Location = New System.Drawing.Point(3, 0)
+        Me.DescriptionLabel.Location = New System.Drawing.Point(3, 9)
         Me.DescriptionLabel.Name = "DescriptionLabel"
         Me.DescriptionLabel.Size = New System.Drawing.Size(10, 13)
         Me.DescriptionLabel.TabIndex = 9
@@ -174,9 +214,9 @@ Partial Class UserPanelForm
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.OrderComboBox)
         Me.GroupBox2.Controls.Add(Me.BooksListView)
-        Me.GroupBox2.Location = New System.Drawing.Point(22, 44)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(405, 299)
+        Me.GroupBox2.Size = New System.Drawing.Size(405, 340)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Book List"
@@ -184,7 +224,7 @@ Partial Class UserPanelForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 45)
+        Me.Label7.Location = New System.Drawing.Point(6, 16)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(41, 13)
         Me.Label7.TabIndex = 8
@@ -193,7 +233,7 @@ Partial Class UserPanelForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(303, 45)
+        Me.Label6.Location = New System.Drawing.Point(303, 16)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(33, 13)
         Me.Label6.TabIndex = 7
@@ -201,7 +241,7 @@ Partial Class UserPanelForm
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(9, 61)
+        Me.TextBox1.Location = New System.Drawing.Point(9, 32)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(182, 20)
         Me.TextBox1.TabIndex = 6
@@ -210,7 +250,7 @@ Partial Class UserPanelForm
         '
         Me.SortByComboBox.FormattingEnabled = True
         Me.SortByComboBox.Items.AddRange(New Object() {"ID", "Title", "ISBN"})
-        Me.SortByComboBox.Location = New System.Drawing.Point(197, 61)
+        Me.SortByComboBox.Location = New System.Drawing.Point(197, 32)
         Me.SortByComboBox.Name = "SortByComboBox"
         Me.SortByComboBox.Size = New System.Drawing.Size(103, 21)
         Me.SortByComboBox.TabIndex = 5
@@ -219,7 +259,7 @@ Partial Class UserPanelForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(194, 45)
+        Me.Label5.Location = New System.Drawing.Point(194, 16)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(41, 13)
         Me.Label5.TabIndex = 4
@@ -229,20 +269,87 @@ Partial Class UserPanelForm
         '
         Me.OrderComboBox.FormattingEnabled = True
         Me.OrderComboBox.Items.AddRange(New Object() {"Ascending", "Descending"})
-        Me.OrderComboBox.Location = New System.Drawing.Point(306, 61)
+        Me.OrderComboBox.Location = New System.Drawing.Point(306, 32)
         Me.OrderComboBox.Name = "OrderComboBox"
         Me.OrderComboBox.Size = New System.Drawing.Size(93, 21)
         Me.OrderComboBox.TabIndex = 3
         Me.OrderComboBox.Text = "Ascending"
         '
+        'ToolStrip
+        '
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BooksToolStripButton, Me.ToolStripSeparator1, Me.TimeToolStripLabel, Me.LogoutToolStripButton, Me.UsernameToolStripLabel})
+        Me.ToolStrip.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip.Name = "ToolStrip"
+        Me.ToolStrip.Size = New System.Drawing.Size(749, 25)
+        Me.ToolStrip.TabIndex = 13
+        Me.ToolStrip.Text = "ToolStrip1"
+        '
+        'BooksToolStripButton
+        '
+        Me.BooksToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BooksToolStripButton.Image = CType(resources.GetObject("BooksToolStripButton.Image"), System.Drawing.Image)
+        Me.BooksToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BooksToolStripButton.Name = "BooksToolStripButton"
+        Me.BooksToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.BooksToolStripButton.Text = "My Borrowed Books"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'TimeToolStripLabel
+        '
+        Me.TimeToolStripLabel.Name = "TimeToolStripLabel"
+        Me.TimeToolStripLabel.Size = New System.Drawing.Size(33, 22)
+        Me.TimeToolStripLabel.Text = "Time"
+        '
+        'LogoutToolStripButton
+        '
+        Me.LogoutToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.LogoutToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.LogoutToolStripButton.Image = CType(resources.GetObject("LogoutToolStripButton.Image"), System.Drawing.Image)
+        Me.LogoutToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.LogoutToolStripButton.Name = "LogoutToolStripButton"
+        Me.LogoutToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.LogoutToolStripButton.Text = "LogoutToolStripButton"
+        '
+        'UsernameToolStripLabel
+        '
+        Me.UsernameToolStripLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.UsernameToolStripLabel.Name = "UsernameToolStripLabel"
+        Me.UsernameToolStripLabel.Size = New System.Drawing.Size(60, 22)
+        Me.UsernameToolStripLabel.Text = "Username"
+        '
+        'Timer
+        '
+        Me.Timer.Enabled = True
+        Me.Timer.Interval = 1000
+        '
+        'SplitContainer1
+        '
+        Me.SplitContainer1.Location = New System.Drawing.Point(12, 28)
+        Me.SplitContainer1.Name = "SplitContainer1"
+        '
+        'SplitContainer1.Panel1
+        '
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GroupBox2)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.GroupBox1)
+        Me.SplitContainer1.Size = New System.Drawing.Size(728, 351)
+        Me.SplitContainer1.SplitterDistance = 418
+        Me.SplitContainer1.TabIndex = 15
+        '
         'UserPanelForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(891, 389)
+        Me.ClientSize = New System.Drawing.Size(749, 383)
         Me.ControlBox = False
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.SplitContainer1)
+        Me.Controls.Add(Me.ToolStrip)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "UserPanelForm"
@@ -253,7 +360,14 @@ Partial Class UserPanelForm
         Me.DescriptionPanel.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.ToolStrip.ResumeLayout(False)
+        Me.ToolStrip.PerformLayout()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -279,4 +393,14 @@ Partial Class UserPanelForm
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents ToolStrip As ToolStrip
+    Friend WithEvents BooksToolStripButton As ToolStripButton
+    Friend WithEvents Timer As Timer
+    Friend WithEvents SplitContainer1 As SplitContainer
+    Friend WithEvents BorrowButton As Button
+    Friend WithEvents ID As ColumnHeader
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents TimeToolStripLabel As ToolStripLabel
+    Friend WithEvents LogoutToolStripButton As ToolStripButton
+    Friend WithEvents UsernameToolStripLabel As ToolStripLabel
 End Class

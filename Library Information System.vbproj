@@ -48,6 +48,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -112,9 +118,12 @@
     </Compile>
     <Compile Include="src\Database\Book.vb" />
     <Compile Include="src\Database\Connection.vb" />
+    <Compile Include="src\Database\Publisher.vb" />
     <Compile Include="src\Database\User.vb" />
+    <Compile Include="src\Database\UserBorrowedBook.vb" />
     <Compile Include="src\Helpers\ImageHelper.vb" />
     <Compile Include="src\Helpers\Rand.vb" />
+    <Compile Include="src\Helpers\ValidatorHelper.vb" />
     <Compile Include="src\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </Compile>
@@ -154,16 +163,40 @@
     <Compile Include="src\SplashScreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="src\UserForm\Add.Designer.vb">
+      <DependentUpon>Add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\UserForm\Add.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\UserForm\AdminPanelForm.Designer.vb">
       <DependentUpon>AdminPanelForm.vb</DependentUpon>
     </Compile>
     <Compile Include="src\UserForm\AdminPanelForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="src\UserForm\BorrowedBook.Designer.vb">
+      <DependentUpon>BorrowedBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\UserForm\BorrowedBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UserForm\MyBorrowedBook.Designer.vb">
+      <DependentUpon>MyBorrowedBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\UserForm\MyBorrowedBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\UserForm\UserPanelForm.Designer.vb">
       <DependentUpon>UserPanelForm.vb</DependentUpon>
     </Compile>
     <Compile Include="src\UserForm\UserPanelForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UserForm\Users.Designer.vb">
+      <DependentUpon>Users.vb</DependentUpon>
+    </Compile>
+    <Compile Include="src\UserForm\Users.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -189,11 +222,23 @@
     <EmbeddedResource Include="src\SplashScreen.resx">
       <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\UserForm\Add.resx">
+      <DependentUpon>Add.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\UserForm\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\UserForm\BorrowedBook.resx">
+      <DependentUpon>BorrowedBook.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UserForm\MyBorrowedBook.resx">
+      <DependentUpon>MyBorrowedBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\UserForm\UserPanelForm.resx">
       <DependentUpon>UserPanelForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UserForm\Users.resx">
+      <DependentUpon>Users.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

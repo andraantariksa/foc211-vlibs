@@ -9,8 +9,8 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Library Information System")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("A library information system written in Visual Basic using Universal Windows Platform (UWP) Form")>
+<Assembly: AssemblyCompany("Andra Antariksa")>
 <Assembly: AssemblyProduct("Library Information System")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("0.0.1.0")>
+<Assembly: AssemblyFileVersion("0.0.1.0")>

@@ -22,6 +22,7 @@ Partial Class RegistrationForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistrationForm))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxEmail = New System.Windows.Forms.TextBox()
@@ -40,7 +41,10 @@ Partial Class RegistrationForm
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBoxName = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.FieldCompletedProgressBar = New System.Windows.Forms.ProgressBar()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -111,7 +115,8 @@ Partial Class RegistrationForm
         '
         'ButtonRegister
         '
-        Me.ButtonRegister.Location = New System.Drawing.Point(299, 250)
+        Me.ButtonRegister.Enabled = False
+        Me.ButtonRegister.Location = New System.Drawing.Point(299, 227)
         Me.ButtonRegister.Name = "ButtonRegister"
         Me.ButtonRegister.Size = New System.Drawing.Size(75, 23)
         Me.ButtonRegister.TabIndex = 9
@@ -191,12 +196,24 @@ Partial Class RegistrationForm
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Name"
         '
+        'FieldCompletedProgressBar
+        '
+        Me.FieldCompletedProgressBar.Location = New System.Drawing.Point(299, 267)
+        Me.FieldCompletedProgressBar.Name = "FieldCompletedProgressBar"
+        Me.FieldCompletedProgressBar.Size = New System.Drawing.Size(199, 23)
+        Me.FieldCompletedProgressBar.TabIndex = 16
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'RegistrationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(528, 302)
+        Me.Controls.Add(Me.FieldCompletedProgressBar)
         Me.Controls.Add(Me.TextBoxName)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -219,6 +236,7 @@ Partial Class RegistrationForm
         Me.Name = "RegistrationForm"
         Me.Text = "Registration"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -241,4 +259,6 @@ Partial Class RegistrationForm
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBoxName As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents FieldCompletedProgressBar As ProgressBar
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
